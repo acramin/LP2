@@ -12,6 +12,7 @@ const App = () => {
     width: "100%",
     borderRadius: 8,
   };
+  const textoDoRotulo = "Nome:";
   return (
     <div
       style={{
@@ -27,7 +28,7 @@ const App = () => {
         className="rotulo"
         style={{ display: "block", marginBottom: 4 }}
       >
-        Nome:
+        {textoDoRotulo}
       </label>
       <input
         type="text"
