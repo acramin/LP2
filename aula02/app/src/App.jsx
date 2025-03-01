@@ -1,7 +1,17 @@
 import React from "react";
-import './styles.css'
+import "./styles.css";
 
 const App = () => {
+  const estilosBotao = {
+    marginTop: 12,
+    paddingTop: 8,
+    paddingBottom: 8,
+    backgroundColor: "blueviolet",
+    color: "white",
+    border: "none",
+    width: "100%",
+    borderRadius: 8,
+  };
   return (
     <div
       style={{
@@ -12,7 +22,11 @@ const App = () => {
         borderRadius: 8,
       }}
     >
-      <label htmlFor="nome" className="rotulo" style={{ display: "block", marginBottom: 4 }}>
+      <label
+        htmlFor="nome"
+        className="rotulo"
+        style={{ display: "block", marginBottom: 4 }}
+      >
         Nome:
       </label>
       <input
@@ -28,20 +42,7 @@ const App = () => {
           boxSizing: "border-box",
         }}
       />
-      <button
-        style={{
-          marginTop: 12,
-          paddingTop: 8,
-          paddingBottom: 8,
-          backgroundColor: "blueviolet",
-          color: "white",
-          border: "none",
-          width: "100%",
-          borderRadius: 8,
-        }}
-      >
-        Enviar
-      </button>
+      <button style={estilosBotao}>Enviar</button>
     </div>
   );
 };
