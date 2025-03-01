@@ -1,4 +1,5 @@
 import React from "react";
+import './styles.css'
 
 const App = () => {
   return (
@@ -11,7 +12,7 @@ const App = () => {
         borderRadius: 8,
       }}
     >
-      <label htmlFor="nome" style={{ display: "block", marginBottom: 4 }}>
+      <label htmlFor="nome" className="rotulo" style={{ display: "block", marginBottom: 4 }}>
         Nome:
       </label>
       <input
