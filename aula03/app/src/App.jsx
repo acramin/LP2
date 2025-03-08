@@ -9,14 +9,15 @@ function App() {
   const textoNOK = "Ainda não chegou";
   const funcaoOK = () => alert("Agradecemos a confirmação!");
   const funcaoNOK = () => alert("Verificaremos o ocorrido!");
-  const componenteFeedback = (      // isso aqui é um componente em uma variável, basta colocar ela no return 
-    <Feedback
-      textoOK={textoOK}
-      funcaoOK={funcaoOK}
-      textoNOK={textoNOK}
-      funcaoNOK={funcaoNOK}
-    />
-  );
+  const componenteFeedback = // isso aqui é um componente em uma variável, basta colocar ela no return
+    (
+      <Feedback
+        textoOK={textoOK}
+        funcaoOK={funcaoOK}
+        textoNOK={textoNOK}
+        funcaoNOK={funcaoNOK}
+      />
+    );
 
   return (
     // container principal
@@ -65,6 +66,21 @@ function App() {
               icone="fas fa-laptop fa-2x"
               titulo="Notebook"
               descricao="Notebook Dell - 8Gb - i5"
+            />
+            {componenteFeedback}
+          </Cartao>
+        </div>
+      </div>
+
+      {/* linha para o quarto pedido*/}
+      <div className="row">
+        {/* controle de colunas para responsividade*/}
+        <div className="col-sm-8 col-md-6 m-2">
+          <Cartao cabecalho="28/02/2025">
+            <Pedido
+              icone="fas fa-mobile fa-2x"
+              titulo="Samsung S25"
+              descricao="Samsung S25 - 256Gb - azul"
             />
             {componenteFeedback}
           </Cartao>
