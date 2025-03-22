@@ -1,8 +1,12 @@
-function App() {
-  return (
-    <>
-    </>
-  )
-}
+import "bootstrap/dist/css/bootstrap.min.css";
+import React from "react";
 
-export default App
+const App = () => {
+  window.navigator.geolocation.getCurrentPosition((position) =>
+    console.log(position) // pede permissão para usar localização em tempo real
+  );
+
+  return <div>App</div>;
+};
+
+export default App;
