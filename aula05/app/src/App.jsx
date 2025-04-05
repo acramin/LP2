@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import "@fortawesome/fontawesome-free/css/all.css";
 import { EstacaoClimatica } from "./EstacaoClimatica";
+import Loading from "./Loading";
 
 class App extends React.Component {
   // o construtor deixa de ser escrito explicitamente, então comentamos sua definição
@@ -93,7 +94,9 @@ class App extends React.Component {
         <div className="row justify-content-center">
           {/** oito colunas das doze disponíveis serão usadas para telas médias em diante */}
           <div className="col-md-8">
-            {this.state.mensagemDeErro ? (
+            {!this.state.latitude && !this.state.mensagemDeErro ? (
+              <Loading mensagem="Por favor, responda a solicitação de localização"/>
+            ) : this.state.mensagemDeErro ? (
               <p className="border rounded p-2 fs-1 text-center">
                 É preciso dar permissão para acesso à localização. Atualize a
                 página e tente de novo, ajustando a configuração no seu
