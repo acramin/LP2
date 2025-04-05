@@ -19,6 +19,7 @@ class App extends Component {
         <div className="col-8">
           <Lista />
         </div>
+        <p>{import.meta.env.VITE_PEXELS_KEY}</p>
       </div>
     );
   }
