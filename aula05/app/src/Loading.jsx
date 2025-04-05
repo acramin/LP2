@@ -14,7 +14,13 @@ export default class Loading extends Component {
    tela */}
           <span className="visually-hidden">Carregando...</span>
         </div>
+        <p className="text-primary p-3 mt-3">{this.props.mensagem}</p>
       </div>
     );
   }
 }
+// fora da classe que define o componente
+Loading.defaultProps = {
+    mensagem : 'Carregando'
+}
+
