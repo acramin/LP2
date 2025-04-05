@@ -3,6 +3,10 @@ import Busca from "./Busca";
 import Lista from "./Lista";
 
 class App extends Component {
+  onBuscaRealizada = (termo) => {
+    console.log(termo);
+  };
+
   render() {
     return (
       <div className="grid justify-content-center m-auto w-9 border-round border-1 border-400">
