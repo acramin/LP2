@@ -8,8 +8,9 @@ export default class Busca extends Component {
   state = {
     termoDeBusca: "",
   };
+
   onTermoAlterado = (event) => {
-    console.log(event.target.value);
+    //console.log(event.target.value);
     this.setState({ termoDeBusca: event.target.value });
   };
 
@@ -21,7 +22,7 @@ export default class Busca extends Component {
 
   render() {
     return (
-      <form onFormSubmit={this.onFormSubmit}>
+      <form onSubmit={this.onFormSubmit}>
         {
           // empilhando os filhos
         }
