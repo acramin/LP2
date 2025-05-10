@@ -1,15 +1,7 @@
 import React, { Component } from "react";
-import Item from "./Item";
+import Imagem from "./Imagem";
 
-export class Lista extends Component {
-  render() {
-    return (
-      <div>
-        <h3>Lista</h3>
-        <Item />
-      </div>
-    );
-  }
-}
-
+const Lista = ({ pics }) => {
+  return pics.map((pic, key) => <Imagem pic={pic.src.small} key={key} />);
+};
 export default Lista;
