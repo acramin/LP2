@@ -2,26 +2,24 @@ import React, { Component } from "react";
 import Busca from "./Busca";
 import Lista from "./Lista";
 import PexelsLogo from "./PexelsLogo";
-import { createClient } from "pexels";
+import pexelsClient from "../utils/PexelsClient";
 
 class App extends Component {
   state = {
     pics: [],
   };
-  pexelsClient = null;
-  PEXELS_KEY = import.meta.env.VITE_PEXELS_KEY;
-
   onBuscaRealizada = (termo) => {
-    this.pexelsClient.photos
-      .search({
-        query: termo,
+    pexelsClient
+      .get("/search", {
+        params: { query: termo },
       })
-      .then((pics) => this.setState({ pics: pics.photos }));
+      .then((result) => {
+        console.log(result);
+        //data é um atributo definido pela axios
+        //o conteúdo da resposta vem associado a essa chave
+        this.setState({ pics: result.data.photos });
+      });
   };
-
-  componentDidMount() {
-    this.pexelsClient = createClient(this.PEXELS_KEY);
-  }
 
   render() {
     return (
